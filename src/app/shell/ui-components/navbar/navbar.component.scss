@@ -1,0 +1,85 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  margin: 10px 80px;
+}
+
+.navbar-buttons,
+ul {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.navbar-buttons span {
+  padding: 0px 20px;
+  user-select: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.span-tf-logo {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  height: 64px;
+  width: auto; /* Promenio sa 64px na auto da se prilagodi širini */
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .navbar-buttons,
+  ul,
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .navbar-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    border-radius: 10%;
+  }
+  
+  .navbar-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dodatno prilagođavanje za mobilni */
+  .logo-icon {
+    height: 48px; /* Malo manji na mobilnom */
+  }
+}

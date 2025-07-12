@@ -1,0 +1,46 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  height: auto;
+  width: 100%;
+  gap: 80px;
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+#welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dodajte ovo da smanjite razmak između paragrafa */
+.content p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.content h1 {
+  margin-bottom: 10px;
+}

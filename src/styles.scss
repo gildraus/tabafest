@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+body,
+html {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    background-color: #FDB927;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+app-footer {
+    flex-shrink: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper-container {
+    flex: 0 1 auto;
+}
+
+.content-container {
+    flex: 1;
+    overflow: auto;
+    /* Allows scrolling */
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer */
+}
+
+.content-container::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
