@@ -1,0 +1,27 @@
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    h1 {
+        text-align: center;
+        margin: 0;
+        font-family: 'Impact', 'Arial Black', sans-serif;
+
+        font-size: 2rem;
+        font-weight: 600;
+
+        // Responsive font size
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 1.2rem;
+        }
+    }
+}
