@@ -8,11 +8,10 @@ import { Component } from '@angular/core';
   standalone: true,
 })
 export class FooterComponent {
-  email = 'kontakt@tabafest.rs'; // Zameniti sa vašim emailom
+  email = 'kontakt@tabafest.rs';
   
   copyEmail() {
     navigator.clipboard.writeText(this.email).then(() => {
-      // Možete dodati toast notifikaciju ovde
       console.log('Email kopiran!');
     });
   }
