@@ -23,6 +23,10 @@ export const routes: Routes = [
         component: InvitationComponent
     },
     {
+        path: 'pozivnica',
+        component: InvitationComponent
+    },
+    {
         path: '**',
         redirectTo: ''
     }
