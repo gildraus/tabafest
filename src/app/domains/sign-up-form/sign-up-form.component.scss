@@ -1,27 +1,61 @@
 .container {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #ffb533;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  // Mobile-first responsive padding
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-
-    h1 {
-        text-align: center;
-        margin: 0;
-        font-family: 'Impact', 'Arial Black', sans-serif;
-
-        font-size: 2rem;
-        font-weight: 600;
-
-        // Responsive font size
-        @media (max-width: 768px) {
-            font-size: 1.5rem;
-        }
-
-        @media (max-width: 480px) {
-            font-size: 1.2rem;
-        }
+  iframe {
+    width: 100%;
+    max-width: 640px; // Prevents iframe from being too wide on large screens
+    height: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    background: white;
+    padding-top: 10px;
+    
+    // Mobile responsive adjustments
+    @media (max-width: 768px) {
+      height: 800px;
+      border-radius: 8px;
+      padding-top: 5px;
     }
+    
+    @media (max-width: 480px) {
+      height: 700px;
+      border-radius: 6px;
+      padding-top: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  h1 {
+    text-align: center;
+    margin: 0 0 1rem 0;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+
+    // Responsive font size
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
 }

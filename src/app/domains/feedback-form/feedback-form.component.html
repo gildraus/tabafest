@@ -1,3 +1,17 @@
-<div class="container">
-    <h1>Сервис за прикупљање утисака и предлога се покреће 10.08. у 8 часова</h1>
+<div class="feedback-container">
+  <iframe
+    *ngIf="isAfterLaunch"
+    src="https://docs.google.com/forms/d/e/1FAIpQLSeSzblTaiZgFAtGqFAsfHW_U3OWVf2SSl5WN_Tf-Pg0j8yJxg/viewform?embedded=true"
+    width="100%"
+    height="820"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+  >
+    Loading…
+  </iframe>
+
+  <h1 class="notice" *ngIf="!isAfterLaunch">
+    Сервис за прикупљање утисака и предлога се покреће 10.08. у 8 часова
+  </h1>
 </div>
