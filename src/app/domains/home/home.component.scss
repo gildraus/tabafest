@@ -140,3 +140,18 @@ section {
         margin-bottom: 120px;
     }
 }
+
+@media (max-width: 600px) {
+    section {
+        height: 100dvh !important;
+        min-height: 100vh !important;
+    }
+    
+    .container {
+        height: 100dvh !important;
+    }
+    
+    .two {
+        height: 100dvh !important;
+    }
+}
