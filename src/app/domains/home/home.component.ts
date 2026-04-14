@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   seconds: number = 0;
   
   private intervalId: any;
-  private targetDate: Date = new Date('2026-04-15T00:00:00');
+  private targetDate: Date = new Date('2026-04-20T00:00:00');
 
   ngOnInit(): void {
     this.updateCountdown();
