@@ -79,10 +79,58 @@
   letter-spacing: 1px;
 }
 
-.announcement-date {
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 30px;
+.dj-section {
+  margin: 40px 0 30px 0;
+}
+
+.dj-label {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: #FDB927;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.dj-name {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #FDB927;
+  margin-bottom: 20px;
+}
+
+.dj-highlight {
+  background-color: #FF0000;
+  padding: 4px 12px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 700;
+}
+
+.party-info {
+  margin: 30px 0 50px 0;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  line-height: 1.6;
+}
+
+.info-item {
+  color: #FDB927;
+  margin-bottom: 12px;
+  
+  strong {
+    font-weight: 600;
+  }
+}
+
+.info-details {
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+.action-highlight {
+  background-color: #FDB927;
+  padding: 4px 12px;
+  border-radius: 4px;
+  color: #552583;
+  font-weight: 700;
 }
 
 .instagram {
