@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   padding: 2rem;
-  background-color: #ffb533;
+  background-color: #2EA592;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +46,7 @@
     font-family: 'Impact', 'Arial Black', sans-serif;
     font-size: 2rem;
     font-weight: 600;
+    color: #0B0506;
 
     // Responsive font size
     @media (max-width: 768px) {

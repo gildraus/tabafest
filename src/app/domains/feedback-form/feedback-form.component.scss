@@ -1,6 +1,6 @@
 .feedback-container {
   min-height: 100vh;
-  background-color: #ffb533;
+  background-color: #E52521;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,7 @@
   flex-direction: column;
   width: 100%;
   max-width: 500px;
-  background-color: #fff3e0;
+  background-color: #fdf9e3;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -93,14 +93,14 @@
 
     &:focus {
       outline: none;
-      border-color: #ffa500;
-      box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.2);
+      border-color: #EED300;
+      box-shadow: 0 0 0 2px rgba(238, 211, 0, 0.3);
     }
   }
 
   button {
-    background-color: #ffa500;
-    color: white;
+    background-color: #EED300;
+    color: #0B0506;
     padding: 0.75rem;
     border: none;
     border-radius: 8px;
@@ -116,7 +116,7 @@
     }
 
     &:hover {
-      background-color: #e69500;
+      background-color: #d4bc00;
     }
 
     &:active {

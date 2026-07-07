@@ -1,10 +1,14 @@
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
   height: auto;
-  margin: 10px 80px;
+  margin: 0;
+  padding: 10px 80px;
+  background-color: #2EA592;
+  color: #FEFE7B;
 }
 
 .navbar-buttons,
@@ -15,9 +19,30 @@ ul {
   cursor: pointer;
 }
 
+.navbar-buttons {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .navbar-buttons span {
   padding: 0px 20px;
   user-select: none;
+}
+
+.cta-button {
+  background-color: #313F68;
+  color: #FEFE7B;
+  padding: 8px 20px !important;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.cta-button:hover {
+  background-color: #253057;
+  transform: scale(1.04);
 }
 
 ul {
