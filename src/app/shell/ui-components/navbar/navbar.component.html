@@ -3,7 +3,7 @@
     <span class="span-tf-logo" (click)="closeDropdown()" [routerLink]="['']">
       <p style="font-size: 17pt; margin-left:-30px;">TabaFest 4.0</p>
     </span>
-    <span class="navbar-toggle" *ngIf="showToggle" (click)="toggleDropdown()">
+    <span class="navbar-toggle" *ngIf="showToggle && !showDropdown" (click)="toggleDropdown()">
       <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
