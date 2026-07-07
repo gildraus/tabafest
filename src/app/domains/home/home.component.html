@@ -1,7 +1,23 @@
 <div class="container">
 
     <section class="one">
-        <img src="assets/party-story.png" alt="IG Story" class="story-image" />
+        <video
+            class="hero-video"
+            #heroVideo
+            playsinline
+            webkit-playsinline
+            autoplay
+            loop
+            muted
+            [muted]="true"
+            preload="auto"
+            src="/assets/hero.mp4"
+            (canplay)="onCanPlay()">
+        </video>
+        <div class="hero-overlay">
+            <h1 class="hero-title">Желиш да се вртиш на лактови?</h1>
+            <button class="hero-btn" [routerLink]="['/signup']">Пријави се за ТабаФест</button>
+        </div>
     </section>
 
     <section class="two" style="margin-top: 10px;">
@@ -10,7 +26,7 @@
         </div>
 
         <div class="part-div date-and-place" style="margin-bottom: 100px;  font-size: 50pt;">
-            <h1>09.08.2025.</h1>
+            <h1>01.08.2026.</h1>
             <p>Алимпијска 40</p>
             <p>Табановац</p>
             <p>од 20 часова!</p>
@@ -18,9 +34,9 @@
 
         <div class="part-div" id="budi-human" style="margin-bottom: 80px;">
             <p>Јака егзибиција хуманитарног карактера,
-            <p>новац сакупљен током журке донирамо</p>
-            <p>лечењу превремено рођене деце преко</p>
-            <p>фондације БудиХуман</p>
+            <p>новац сакупљен током журке донирамо у</p>
+            <p>хуманитарне сврхе преко</p>
+            <p>фондације Срби за Србе</p>
         </div>
 
     </section>
@@ -29,8 +45,6 @@
         <div class="part-div" style="font-size: 20pt;">
             <h2>Асортиман пића:</h2>
             <ul class="no-bullets">
-                <li>Крафт пиво: Дрипац Министарство
-                </li>
                 <li>Ракија: Сува шљива
                 </li>
                 <li>Лименка: Хајнекен
@@ -47,7 +61,6 @@
             <ul class="no-bullets">
                 <li>19ч окупљање и загревање</li>
                 <li>20ч Маин стаге ДЈ Гоша</li>
-                <li>21ч креће са радом точилица</li>
                 <li>23ч ватромет</li>
                 <li>*музика и купање до фајронта*</li>
                 <li>~03ч расклањамо смеће</li>
@@ -59,7 +72,7 @@
 
     <section class="four">
         <div class="part-div" style="font-size: 40pt;">
-            <h1 style="color: #E52521;" id="important">ВАЖНО:</h1>
+            <h1 id="important">ВАЖНО:</h1>
             <ul style="list-style: none;">
                 <li>
                     <p>1. Улаз на журку је могућ ИСКЉУЧИВО</p>

@@ -25,31 +25,34 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #FEFE7B;
 
     scroll-snap-align: start;
 }
 
 .one {
-    background-color: #E52521;
-    margin-top: -100px;
+    background-color: #2EA592;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
 
 
 
 }
 
 .two {
-    background-color: #EED300;
+    background-color: #2EA592;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .three {
-    background-color: #E52521;
+    background-color: #2EA592;
 }
 
 .four {
-    background-color: #EED300;
+    background-color: #2EA592;
 }
 
 .story-section {
@@ -62,11 +65,61 @@ section {
     overflow: hidden;
 }
 
-.story-image {
-    max-height: 800px;
-    object-fit: contain;
-    animation: pulse-scale 3s ease-in-out infinite;
-    border-radius: 16px;
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    text-align: center;
+    padding: 0 24px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-title {
+    font-size: 56px;
+    color: #FEFE7B;
+    line-height: 1.1;
+}
+
+.hero-btn {
+    background-color: #313F68;
+    color: #FEFE7B;
+    border: none;
+    padding: 18px 40px;
+    font-size: 24px;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.hero-btn:hover {
+    background-color: #253057;
+    transform: scale(1.04);
+}
+
+.four a {
+    color: #FEFE7B;
+    text-decoration: none;
+}
+
+.four a:hover {
+    text-decoration: underline;
 }
 
 .part-div {
@@ -83,6 +136,10 @@ section {
 
 
 
+}
+
+#budi-human p {
+    font-size: 28pt;
 }
 
 .no-bullets {
@@ -110,13 +167,10 @@ section {
 }
 
 @media (max-width: 600px) {
-    .story-image {
-        margin-left: 16px;
-        margin-right: 16px;
-        width: auto;
-        max-width: calc(100vw - 32px);
-        height: auto;
-        margin-top: 40px;
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     #laktovi {
@@ -135,6 +189,10 @@ section {
 
     #budi-human, #satnica{
         margin-bottom: 200px !important;
+    }
+
+    #budi-human p {
+        font-size: 18pt;
     }
 
     .three h2 {
