@@ -251,6 +251,12 @@ section {
     margin-top: 6px;
 }
 
+.summary-note {
+    font-size: clamp(12px, 1.3vw, 15px) !important;
+    font-style: italic;
+    opacity: 0.82;
+}
+
 .instagram-contact a {
     display: inline-flex;
     align-items: center;
