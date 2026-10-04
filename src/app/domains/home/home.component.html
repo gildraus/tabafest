@@ -1,116 +1,124 @@
-<div class="container">
+<section class="hero">
+    <video
+        class="hero-video"
+        #heroVideo
+        playsinline
+        webkit-playsinline
+        autoplay
+        loop
+        muted
+        [muted]="true"
+        preload="metadata"
+        src="/assets/hero.mp4"
+        (canplay)="onCanPlay()">
+    </video>
+    <div class="hero-shade" aria-hidden="true"></div>
 
-    <section class="one">
-        <video
-            class="hero-video"
-            #heroVideo
-            playsinline
-            webkit-playsinline
-            autoplay
-            loop
-            muted
-            [muted]="true"
-            preload="auto"
-            src="/assets/hero.mp4"
-            (canplay)="onCanPlay()">
-        </video>
-        <div class="hero-overlay">
-            <h1 class="hero-title">Tabafest je do sada donirao</h1>
-            <p class="hero-amount">{{ donationAmountDisplay }} RSD</p>
-            <p class="hero-subtitle">u humanitarne svrhe</p>
+    <div class="hero-content">
+        <p class="eyebrow">Tabafest je do sada donirao</p>
+        <p class="hero-amount">{{ donationAmountDisplay }}<span class="hero-currency">RSD</span></p>
+        <p class="hero-subtitle">u humanitarne svrhe</p>
+    </div>
+
+    <a class="scroll-hint" href="#o-tabafestu" aria-label="Skroluj na informacije o događaju">
+        <span>Skroluj dole</span>
+        <span class="scroll-arrow" aria-hidden="true">↓</span>
+    </a>
+</section>
+
+<section class="content" id="o-tabafestu">
+    <article class="card intro" aria-label="Tabafest informacije o događaju">
+        <h1>Tabafest u Tabanovcu je jaka egzibicija humanitarnog karaktera.</h1>
+        <p>
+            Nastao je kao letnje okupljanje ekipe u Tabanovcu, a kroz godine je prerastao u događaj koji
+            okuplja preko 100 ljudi. Bazen, muzika, aktivnosti tokom dana i ozbiljna žurka uveče — ukratko,
+            sve što je potrebno za dobar letnji provod.
+        </p>
+        <p>
+            Pored dobre zabave, humanitarni karakter je sastavni deo Tabafesta. Svake godine se trudimo da deo
+            ove naše egzibicije usmerimo tamo gde je pomoć najpotrebnija.
+        </p>
+        <p>
+            Ove godine kontaktirali smo humanitarnu organizaciju Srbi za Srbe, koja nam je pomogla u
+            prikupljanju donacija. Takođe, imali smo partnerstvo sa Carlsberg-om, koji je donirao određenu
+            količinu piva za događaj.
+        </p>
+    </article>
+
+    <div class="motto">
+        <p>A šta god da se dešava, jedno pravilo ostaje isto:</p>
+        <p class="motto-text">Vrtimo se na laktovi.</p>
+    </div>
+
+    <article class="card donations" aria-label="Tabafest donacije">
+        <h2>Donacije</h2>
+        <ul class="donation-list">
+            <li>
+                <span class="donation-year">2025</span>
+                <span class="donation-org">Budi human</span>
+                <span class="donation-value">138.000 RSD</span>
+            </li>
+            <li>
+                <span class="donation-year">2026</span>
+                <span class="donation-org">Srbi za Srbe</span>
+                <span class="donation-value">193.950 RSD</span>
+            </li>
+        </ul>
+        <div class="donation-total">
+            <span>Ukupno</span>
+            <span class="donation-badge">331.950 RSD</span>
         </div>
-        <div class="scroll-indicator" aria-hidden="true">
-            <span>Skroluj dole</span>
-            <span class="scroll-arrow">↓</span>
-        </div>
-    </section>
+    </article>
 
-    <section class="two">
-        <article class="event-summary" aria-label="Tabafest informacije o događaju">
-            <h2>Tabafest u Tabanovcu je jaka egzibicija humanitarnog karaktera.</h2>
-            <p>
-                Nastao je kao letnje okupljanje ekipe u Tabanovcu, a kroz godine je prerastao u događaj koji
-                okuplja preko 100 ljudi. Bazen, muzika, aktivnosti tokom dana i ozbiljna žurka uveče — ukratko,
-                sve što je potrebno za dobar letnji provod.
-            </p>
+    <article class="card next-event" aria-label="Tabafest 5.0">
+        <p class="eyebrow">Sledeća egzibicija</p>
+        <h2>Tabafest 5.0</h2>
+        <p>Peta egzibicija je već uveliko u pripremi.</p>
+        <p class="event-date">31. jul 2027.</p>
+        <p class="event-tagline">I da, opet se vrtimo na laktovi.</p>
+    </article>
 
-            <p>
-                Pored dobre zabave, humanitarni karakter je sastavni deo Tabafesta. Svake godine se trudimo da deo
-                ove naše egzibicije usmerimo tamo gde je pomoć najpotrebnija.
-            </p>
-
-            <p>
-                Ove godine kontaktirali smo humanitarnu organizaciju Srbi za Srbe, koja nam je pomogla u
-                prikupljanju donacija. Takođe, imali smo partnerstvo sa Carlsberg-om, koji je donirao određenu
-                količinu piva za događaj.
-            </p>
-
-            <p>A šta god da se dešava, jedno pravilo ostaje isto:</p>
-
-            <p class="moto"><span class="moto-highlight">Vrtimo se na laktovi.</span></p>
-
-            <h3>Tabafest 5.0</h3>
-            <p>Peta egzibicija je već uveliko u pripremi.</p>
-
-            <p class="event-date">31. jul 2027.</p>
-
-            <p class="moto">I da, opet se vrtimo na laktovi.</p>
-
-            <p class="summary-footnote">
-                Tabafest donacije do sada:
-                <span class="donation-badge">331.950 RSD</span>
-                za humanitarne svrhe.
-            </p>
-
-            <p class="summary-note">
-                Napomena: U 2025. donirali smo 138.000 RSD organizaciji Budi human, a u 2026. 193.950 RSD organizaciji Srbi za Srbe.
-            </p>
-
-            <p class="summary-contact instagram-contact">
-                <span>Zapratite nas na instagramu:</span>
-                <a href="https://www.instagram.com/tabafest" target="_blank" rel="noopener noreferrer" aria-label="Tabafest Instagram profil">
-                    <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect>
-                        <circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.8"></circle>
-                        <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle>
-                    </svg>
-                </a>
-            </p>
-        </article>
+    <a class="instagram-cta" href="https://www.instagram.com/tabafest" target="_blank" rel="noopener noreferrer">
+        <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect>
+            <circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.8"></circle>
+            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle>
+        </svg>
+        Zapratite nas na Instagramu
+    </a>
 
         <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Festival",
-                "name": "Tabafest 5.0",
-                "description": "Humanitarna letnja egzibicija u Tabanovcu sa muzikom, bazenom i prikupljanjem donacija.",
-                "startDate": "2027-07-31T20:00:00+02:00",
-                "eventStatus": "https://schema.org/EventScheduled",
-                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-                "location": {
-                    "@type": "Place",
-                    "name": "Tabafest lokacija",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "Alimpijska 40",
-                        "addressLocality": "Tabanovac",
-                        "addressCountry": "RS"
-                    }
-                },
-                "organizer": {
-                    "@type": "Organization",
-                    "name": "Tabafest",
-                    "email": "milos.vujcic.997@gmail.com"
-                },
-                "areaServed": {
-                    "@type": "Place",
-                    "name": "Tabanovac"
-                },
-                "sameAs": [
-                    "https://www.instagram.com/tabafest"
-                ],
-                "keywords": "tabafest, humanitarni događaj, tabanovac, letnja žurka, donacije, vrtenje na laktovi"
-            }
-        </script>
-    </section>
-</div>
+        {
+            "@context": "https://schema.org",
+            "@type": "Festival",
+            "name": "Tabafest 5.0",
+            "description": "Humanitarna letnja egzibicija u Tabanovcu sa muzikom, bazenom i prikupljanjem donacija.",
+            "startDate": "2027-07-31T20:00:00+02:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "location": {
+                "@type": "Place",
+                "name": "Tabafest lokacija",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Alimpijska 40",
+                    "addressLocality": "Tabanovac",
+                    "addressCountry": "RS"
+                }
+            },
+            "organizer": {
+                "@type": "Organization",
+                "name": "Tabafest",
+                "email": "milos.vujcic.997@gmail.com"
+            },
+            "areaServed": {
+                "@type": "Place",
+                "name": "Tabanovac"
+            },
+            "sameAs": [
+                "https://www.instagram.com/tabafest"
+            ],
+            "keywords": "tabafest, humanitarni događaj, tabanovac, letnja žurka, donacije, vrtenje na laktovi"
+        }
+    </script>
+</section>

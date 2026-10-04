@@ -31,9 +31,8 @@ export class AppComponent implements OnInit {
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        const contentContainer = this.document.querySelector('.content-container');
-        if (contentContainer) {
-          contentContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        if (!event.urlAfterRedirects.includes('#')) {
+          this.document.defaultView?.scrollTo({ top: 0 });
         }
 
         this.updateSeoMeta();

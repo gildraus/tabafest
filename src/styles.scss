@@ -1,39 +1,40 @@
-body,
+:root {
+    --tf-teal: #2EA592;
+    --tf-teal-dark: #1F7F70;
+    --tf-yellow: #FEFE7B;
+    --tf-navy: #313F68;
+    --tf-navy-dark: #1F2A48;
+    --tf-nav-height: 60px;
+    --tf-safe-top: env(safe-area-inset-top, 0px);
+    --tf-safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    background-color: #2EA592;
-    color: #FEFE7B;
-    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: var(--tf-teal);
+}
+
+body {
     margin: 0;
-    width: 100%;
+    min-height: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--tf-teal);
+    color: var(--tf-yellow);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
 }
 
-app-footer {
-    flex-shrink: 0;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-.wrapper-container {
-    flex: 0 1 auto;
-}
-
-.content-container {
-    flex: 1;
-    overflow: auto;
-    /* Allows scrolling */
-    scrollbar-width: none;
-    /* For Firefox */
-    -ms-overflow-style: none;
-    /* For Internet Explorer */
-}
-
-.content-container::-webkit-scrollbar {
-    display: none;
-    /* For Chrome, Safari, and Opera */
+img,
+video,
+svg {
+    display: block;
+    max-width: 100%;
 }
