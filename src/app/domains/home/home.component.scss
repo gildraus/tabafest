@@ -1,226 +1,304 @@
-* {
-    box-sizing: border-box;
+:host {
+    display: block;
+}
+
+p,
+h1,
+h2 {
     margin: 0;
-    padding: 0;
-
 }
 
-.container {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    opacity: 0.9;
 }
 
-.container::-webkit-scrollbar {
-    display: none;
+/* ---------- Hero ---------- */
 
-}
-
-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #FEFE7B;
-
-    scroll-snap-align: start;
-}
-
-.one {
-    background-color: #2EA592;
+.hero {
     position: relative;
-    overflow: hidden;
-    padding: 0;
-
-
-
-}
-
-.two {
-    background-color: #2EA592;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.three {
-    background-color: #2EA592;
-}
-
-.four {
-    background-color: #2EA592;
-}
-
-.story-section {
-    height: 100vh;
-    width: 100%;
-    background-color: black;
-    display: flex;
     align-items: center;
     justify-content: center;
+    /* svh = visible viewport on iOS, so the hero never hides under browser bars */
+    min-height: calc(100vh - var(--tf-nav-height) - var(--tf-safe-top));
+    min-height: calc(100svh - var(--tf-nav-height) - var(--tf-safe-top));
+    padding: 32px 20px calc(96px + var(--tf-safe-bottom));
     overflow: hidden;
+    background-color: var(--tf-navy-dark);
+    text-align: center;
 }
 
 .hero-video {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    z-index: 0;
 }
 
-.hero-overlay {
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(31, 42, 72, 0.25) 0%,
+            rgba(31, 42, 72, 0.55) 55%,
+            rgba(46, 165, 146, 1) 100%);
+}
+
+.hero-content {
     position: relative;
-    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 32px;
-    text-align: center;
-    padding: 0 24px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+    gap: 12px;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }
 
-.hero-title {
-    font-size: 56px;
-    color: #FEFE7B;
-    line-height: 1.1;
+.hero-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: clamp(48px, 15vw, 128px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    font-variant-numeric: tabular-nums;
 }
 
-.hero-btn {
-    background-color: #313F68;
-    color: #FEFE7B;
-    border: none;
-    padding: 18px 40px;
-    font-size: 24px;
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    border-radius: 8px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: background-color 0.2s ease, transform 0.15s ease;
+.hero-currency {
+    font-size: 0.32em;
+    font-weight: 800;
+    letter-spacing: 0;
 }
 
-.hero-btn:hover {
-    background-color: #253057;
-    transform: scale(1.04);
+.hero-subtitle {
+    font-size: clamp(18px, 5vw, 28px);
+    font-weight: 600;
 }
 
-.four a {
-    color: #FEFE7B;
+.scroll-hint {
+    position: absolute;
+    bottom: calc(24px + var(--tf-safe-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 16px;
+    color: var(--tf-yellow);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
     text-decoration: none;
 }
 
-.four a:hover {
-    text-decoration: underline;
+.scroll-arrow {
+    font-size: 22px;
+    line-height: 1;
+    animation: arrow-bounce 1.2s ease-in-out infinite;
 }
 
-.part-div {
-    flex: 1;
+/* ---------- Content ---------- */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: min(720px, 100%);
+    margin: 0 auto;
+    padding: 8px 16px calc(48px + var(--tf-safe-bottom));
+    scroll-margin-top: calc(var(--tf-nav-height) + var(--tf-safe-top));
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px 20px;
+    border-radius: 20px;
+    background: rgba(31, 42, 72, 0.32);
+    border: 1px solid rgba(254, 254, 123, 0.2);
+
+    h1 {
+        font-size: clamp(26px, 7vw, 40px);
+        font-weight: 900;
+        line-height: 1.12;
+        letter-spacing: -0.5px;
+    }
+
+    h2 {
+        font-size: clamp(24px, 6.5vw, 34px);
+        font-weight: 900;
+        letter-spacing: -0.4px;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.55;
+        font-weight: 500;
+        color: rgba(254, 254, 123, 0.92);
+    }
+}
+
+.motto {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.part-div:last-child {
-    border-bottom: none;
-
-
-
-
-}
-
-#budi-human p {
-    font-size: 28pt;
+    gap: 12px;
+    padding: 16px 0;
     text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+
+    .motto-text {
+        padding: 10px 18px;
+        border-radius: 14px;
+        background: var(--tf-navy);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        font-size: clamp(26px, 8vw, 42px);
+        font-weight: 900;
+        letter-spacing: -0.3px;
+        transform: rotate(-2deg);
+    }
 }
 
-#budi-human {
-    text-align: center;
-}
-
-.no-bullets {
-    list-style: none;
-    padding-left: 0;
+.donation-list {
+    display: flex;
+    flex-direction: column;
     margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(254, 254, 123, 0.18);
+        font-size: 16px;
+    }
 }
 
-@keyframes pulse-scale {
+.donation-year {
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: var(--tf-navy);
+    font-size: 14px;
+    font-weight: 800;
+}
 
+.donation-org {
+    font-weight: 600;
+}
+
+.donation-value {
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.donation-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.donation-badge {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--tf-yellow);
+    color: var(--tf-navy-dark);
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    box-shadow: 0 0 18px rgba(254, 254, 123, 0.55);
+}
+
+.next-event {
+    align-items: center;
+    text-align: center;
+    background: var(--tf-navy);
+
+    .event-date {
+        margin: 6px 0;
+        font-size: clamp(30px, 9vw, 48px);
+        font-weight: 900;
+        letter-spacing: -0.5px;
+        color: var(--tf-yellow);
+    }
+
+    .event-tagline {
+        font-weight: 700;
+    }
+}
+
+.instagram-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 56px;
+    padding: 0 20px;
+    border-radius: 16px;
+    background: var(--tf-yellow);
+    color: var(--tf-navy-dark);
+    font-size: 17px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.15s ease;
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes arrow-bounce {
     0%,
     100% {
-        transform: scale(1);
+        transform: translateY(0);
     }
 
     50% {
-        transform: scale(1.05);
+        transform: translateY(5px);
     }
-
-
-
 }
 
-@media (max-width: 600px) {
-    .hero-video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+@media (min-width: 768px) {
+    .content {
+        gap: 28px;
+        padding-top: 16px;
     }
 
-    #laktovi {
-        font-size: 20pt;
-    }
-
-    .date-and-place {
-        h1 {
-            font-size: 40pt;
-        }
+    .card {
+        padding: 36px;
 
         p {
-            font-size: 20pt;
+            font-size: 19px;
         }
     }
 
-    #budi-human, #satnica{
-        margin-bottom: 200px !important;
+    .instagram-cta {
+        align-self: center;
+        padding: 0 32px;
     }
+}
 
-    #budi-human p {
-        font-size: 18pt;
-        width: 100%;
-        text-align: center;
-    }
-
-    .three h2 {
-        font-size: 20pt;
-
-    }
-
-    .three li {
-        font-size: 16pt;
-    }
-
-    section.four {
-        margin-bottom: 150px;
-    }
-
-    section.four li {
-        font-size: 12pt;
-    }
-
-    #important {
-        font-size: 20pt;
-    }
-
-    .four .part-div {
-        margin-bottom: 120px;
+@media (prefers-reduced-motion: reduce) {
+    .scroll-arrow {
+        animation: none;
     }
 }
